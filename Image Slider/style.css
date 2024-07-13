@@ -1,0 +1,40 @@
+body{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: palevioletred;
+}
+
+.container{
+    border: 8px solid whitesmoke;
+    min-height: 80vh;
+    width: 60%;
+    margin: 4rem auto;
+    border-radius: 7px;
+    position: relative;
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+    background: url("1.jpg") center/cover no-repeat;
+    transition: background 2s ease-in-out;
+}
+
+.btn-left{
+    position:absolute;
+    top: 50%;
+    left:-2%;
+    background-color: white;
+    padding: 0.4em 0.6em;
+    border-radius: 2em;
+    transform: translateY(calc(-50%));
+    cursor: pointer;
+}
+
+.btn-right{
+    position:absolute;
+    top: 50%;
+    right:-2%;
+    background-color: white;
+    padding: 0.4em 0.6em;
+    border-radius: 2em;
+    transform: translateY(calc(-50%));
+    cursor: pointer;
+}
