@@ -1,0 +1,54 @@
+JavaScript Promises
+
+Imagine you asked your friend to borrow a book. Your friend says, "I promise to give you the book." This promise can have three outcomes:
+
+    Pending: Your friend is still looking for the book.
+    Fulfilled: Your friend found the book and gave it to you.
+    Rejected: Your friend couldn't find the book and told you they can't give it to you.
+
+In JavaScript, a promise works in the same way. It is used to handle asynchronous operations, like reading a file or fetching data from a server.
+
+let promise = new Promise((resolve, reject) => {
+  // do something
+  let isSuccess = true; // This can be true or false
+
+  if (isSuccess) {
+    resolve("The book is found!");
+  } else {
+    reject("The book is not found.");
+  }
+});
+
+
+promise.then((message) => {
+  console.log("Success: " + message);
+}).catch((message) => {
+  console.log("Failure: " + message);
+});
+---------------------------------------------------------------------------------------
+Async/Await
+
+async function getBook() {
+  let promise = new Promise((resolve, reject) => {
+    let isSuccess = true;
+
+    if (isSuccess) {
+      resolve("The book is found!");
+    } else {
+      reject("The book is not found.");
+    }
+  });
+
+  try {
+    let result = await promise; // Wait until the promise resolves
+    console.log("Success: " + result);
+  } catch (error) {
+    console.log("Failure: " + error);
+  }
+}
+
+getBook();
+
+1. async function: Declares an async function. This function always returns a promise.
+2. await: Pauses the function execution until the promise settles (either resolves or rejects). You can use await only inside an async function.
+3. try...catch: Handles the promise result. try executes if the promise is fulfilled, and catch executes if the promise is rejected.
